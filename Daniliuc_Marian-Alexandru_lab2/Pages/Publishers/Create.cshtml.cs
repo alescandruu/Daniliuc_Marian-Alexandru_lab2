@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Daniliuc_Marian_Alexandru_lab2.Data;
 using Daniliuc_Marian_Alexandru_lab2.Models;
 
-namespace Daniliuc_Marian_Alexandru_lab2.Pages.Books
+namespace Daniliuc_Marian_Alexandru_lab2.Pages.Publishers
 {
     public class CreateModel : PageModel
     {
@@ -21,8 +21,6 @@ namespace Daniliuc_Marian_Alexandru_lab2.Pages.Books
 
         public IActionResult OnGet()
         {
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
-
             return Page();
         }
 

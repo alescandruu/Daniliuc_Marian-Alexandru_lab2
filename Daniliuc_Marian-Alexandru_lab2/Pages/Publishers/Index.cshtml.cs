@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Daniliuc_Marian_Alexandru_lab2.Data;
 using Daniliuc_Marian_Alexandru_lab2.Models;
 
-namespace Daniliuc_Marian_Alexandru_lab2.Pages.Books
+namespace Daniliuc_Marian_Alexandru_lab2.Pages.Publishers
 {
     public class IndexModel : PageModel
     {
@@ -23,9 +23,10 @@ namespace Daniliuc_Marian_Alexandru_lab2.Pages.Books
 
         public async Task OnGetAsync()
         {
-            Book = await _context.Book
-            .Include(b => b.Publisher)
-            .ToListAsync();
+            if (_context.Book != null)
+            {
+                Book = await _context.Book.ToListAsync();
+            }
         }
     }
 }

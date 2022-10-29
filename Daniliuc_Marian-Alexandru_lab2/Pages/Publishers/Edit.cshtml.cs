@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Daniliuc_Marian_Alexandru_lab2.Data;
 using Daniliuc_Marian_Alexandru_lab2.Models;
 
-namespace Daniliuc_Marian_Alexandru_lab2.Pages.Books
+namespace Daniliuc_Marian_Alexandru_lab2.Pages.Publishers
 {
     public class EditModel : PageModel
     {
@@ -36,8 +36,6 @@ namespace Daniliuc_Marian_Alexandru_lab2.Pages.Books
                 return NotFound();
             }
             Book = book;
-            ViewData["PublisherID"] = new SelectList(_context.Set<Publisher>(), "ID", "PublisherName");
-
             return Page();
         }
 
